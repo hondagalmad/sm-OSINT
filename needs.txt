@@ -1,0 +1,10 @@
+Trie / Radix
+Bfs/Dfs (on trie)
+String normalization function (make all small and make all symbols .)
+String matching
+Pattern matching
+frequency analysis
+maybe ranking and A* when structure hold up
+distance matching (prefix / suffix repition)
+-->intial needs لو في حاجة مع بعض بردو
+
