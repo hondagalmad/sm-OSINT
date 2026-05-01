@@ -52,6 +52,9 @@ public:
             }
         }
     }
+    bool isdirected() {
+        return directed;
+    }
 };
 template <class T>
 class DFS {
@@ -92,6 +95,9 @@ public:
         fill(visited.begin(), visited.end(), false);
         fill(parent.begin(), parent.end(), -1);
         dfs(x);
+    }
+    bool isdirected() {
+        return directed;
     }
 };
 #endif
