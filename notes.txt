@@ -1,0 +1,4 @@
+trie is still incomplete 
+for graph traversing call traverse() and not the graph name
+TODO 
+string normalization
