@@ -3,7 +3,7 @@
 #include <cstring>
 class TRIENODE {
 public:
-    TRIENODE* children[26];
+    TRIENODE* children[40];
     int pfx, end;
     TRIENODE() {
         pfx = 0;
@@ -11,7 +11,7 @@ public:
         memset(children, 0, sizeof(children));
     }
     ~TRIENODE() {
-        for (int i=0; i<26; i++) {
+        for (int i=0; i<40; i++) {
             if (children[i]) delete children[i];
         }
     }
