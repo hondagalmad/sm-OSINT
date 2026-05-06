@@ -38,6 +38,7 @@ public:
     };
 
     string get() { return this->initial; }
+    ~Normalization() {}
 };
 
 #endif
