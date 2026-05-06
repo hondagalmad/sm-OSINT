@@ -1,16 +1,15 @@
 #ifndef NORMALIZATION_HPP
 #define NORMALIZATION_HPP
 #include <bits/stdc++.h>
-using namespace std;
 
 class Normalization
 {
 private:
-    string initial;
+    std::string initial;
 
 public:
     Normalization() = default;
-    Normalization(string initial)
+    Normalization(std::string initial)
     {
         this->initial = initial;
         for (int i = 0; i < initial.length(); i++)
@@ -37,7 +36,7 @@ public:
         }
     };
 
-    string get() { return this->initial; }
+    std::string get() { return this->initial; }
     ~Normalization() {}
 };
 
