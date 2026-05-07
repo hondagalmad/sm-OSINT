@@ -36,5 +36,16 @@ public:
         }
         CURR->end++;
     }
-};
+    int count(const string &word) {//will use int instead of bool kda kda lw >0 will be true
+        NODE* CURR = root;
+        for (char c : word) {
+            int idx = getIndex(c);
+            if (CURR->children[idx] == NULL) {
+                return 0;
+            }
+            CURR = CURR->children[idx];
+        }
+        return CURR->pfx;
+    }
+}; 
 #endif
