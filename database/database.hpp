@@ -14,7 +14,7 @@ class Database
 {
 private:
     // MySQL driver && connection
-    sql::Driver *driver;
+    sql::mysql::MySQL_Driver *driver;
     std::unique_ptr<sql::Connection> con;
 
 public:
