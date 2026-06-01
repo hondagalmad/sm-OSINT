@@ -9,6 +9,13 @@ const std::string database = "osinit";
 int main()
 {
     Database db;
+    
+    if(!db.connect(host,user, password, database))
+    {
+        std::cout << "Connection faild\n";
+        return 0;
+    }
+
 
     return 0;
 }
