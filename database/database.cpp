@@ -29,3 +29,25 @@ void Database::disconnect()
 {
     con.reset();
 }
+
+bool Database::InsertUser(const std::string &username, const std::string &normalized)
+{
+    try
+    {
+        std::unique_ptr<sql::PreparedStatement> stmt(
+            con->prepareStatement(
+                "INSERT INTO usernames (username,normalized)"
+                "VALUES (?,?)"));
+
+        stmt->setString(1, username);
+        stmt->setString(2, normalized);
+
+        stmt->execute();
+
+        return true;
+    }
+    catch (sql::SQLException &e)
+    {
+        return false;
+    }
+}

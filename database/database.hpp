@@ -24,7 +24,7 @@ public:
 
     void disconnect();
 
-    void InsertUser(const std::string &usernmae, const std::string &normalized);
+    bool InsertUser(const std::string &usernmae, const std::string &normalized);
 
     std::vector<user> GetUsers();
 };
