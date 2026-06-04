@@ -36,8 +36,8 @@ public:
         }
         CURR->end++;
     }
-    int count(const string &word) {//will use int instead of bool kda kda lw >0 will be true
-        NODE* CURR = root;
+    int count(const std::string &word) {//will use int instead of bool kda kda lw >0 will be true
+        TRIENODE* CURR = root;
         for (char c : word) {
             int idx = getIndex(c);
             if (CURR->children[idx] == NULL) {
