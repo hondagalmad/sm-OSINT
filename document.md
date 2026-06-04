@@ -164,7 +164,6 @@ Traversal algorithms such as **BFS/DFS** can be used for exploration.
 
 ##  Future Improvements
 
-* Levenshtein distance integration
 * BK-tree or fuzzy trie traversal
 * Platform availability checks
 * Caching frequent queries
