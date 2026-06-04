@@ -1,6 +1,6 @@
 #ifndef TRIE_H
 #define TRIE_H
-#include "node.h"
+#include "Trie_Node.hpp"
 #include <string>
 class TRIE
 {
