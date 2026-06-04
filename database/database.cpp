@@ -21,6 +21,7 @@ bool Database::connect(const std::string &host, const std::string &user, const s
     }
     catch (sql::SQLException &e)
     {
+        std::cerr << e.what() << '\n';
         return false;
     }
 }
@@ -48,6 +49,8 @@ bool Database::InsertUser(const std::string &username, const std::string &normal
     }
     catch (sql::SQLException &e)
     {
+        std::cerr << "Connect failed: " << e.what() << "\nError code: " << e.getErrorCode() << '\n';
+
         return false;
     }
 }
@@ -63,8 +66,7 @@ std::vector<user> Database::GetUsers()
 
         std::unique_ptr<sql::ResultSet> res(
             stmt->executeQuery(
-                "SELECT id, username, normalized"
-                "FROM usernames"));
+                "SELECT id, username, normalized FROM usernames"));
 
         while (res->next())
         {

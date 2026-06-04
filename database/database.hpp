@@ -1,6 +1,12 @@
 #pragma once
+
+#include <string>
+#include <memory>
+#include <vector>
+
 #include <mysql_connection.h>
 #include <mysql_driver.h>
+
 
 // The main data of users
 struct user
