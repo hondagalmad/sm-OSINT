@@ -2,8 +2,8 @@
 
 // database connection's data
 const std::string host = "tcp://127.0.0.1:3306";
-const std::string user = "root";
-const std::string password = "1972";
+const std::string user = "osint";
+const std::string password = "osint_8F#29kP!v";
 const std::string database = "osint";
 
 int main()
