@@ -21,6 +21,7 @@ bool Database::connect(const std::string &host, const std::string &user, const s
     }
     catch (sql::SQLException &e)
     {
+        std::cerr << e.what() << '\n';
         return false;
     }
 }
@@ -48,6 +49,44 @@ bool Database::InsertUser(const std::string &username, const std::string &normal
     }
     catch (sql::SQLException &e)
     {
+        std::cerr << "Connect failed: " << e.what() << "\nError code: " << e.getErrorCode() << '\n';
+
         return false;
+    }
+}
+
+std::vector<user> Database::GetUsers()
+{
+    try
+    {
+        std::vector<user> users;
+
+        std::unique_ptr<sql::Statement> stmt(
+            con->createStatement());
+
+        std::unique_ptr<sql::ResultSet> res(
+            stmt->executeQuery(
+                "SELECT id, username, normalized FROM usernames"));
+
+        while (res->next())
+        {
+            user cur_user;
+
+            cur_user.id = res->getInt64("id");
+            cur_user.username = res->getString("username");
+            cur_user.normalized = res->getString("normalized");
+
+            users.push_back(cur_user);
+        }
+
+        return users;
+    }
+    catch (sql::SQLException &e)
+    {
+        std::cerr << "GetUsers failed: " << e.what()
+                  << " (MySQL error code: " << e.getErrorCode()
+                  << ", SQLState: " << e.getSQLState() << ")\n";
+
+        return {};
     }
 }

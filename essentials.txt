@@ -1,1 +1,2 @@
 Connect to database -> sudo apt install libmysqlcppconn-dev
+run main to test db -> g++ main.cpp database/database.cpp     -o test_db     -lmysqlcppconn && ./test_db
