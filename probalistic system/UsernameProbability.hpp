@@ -1,6 +1,6 @@
 #ifndef USERNAME_PROBABILITY_HPP
 #define USERNAME_PROBABILITY_HPP
-#include <bits/stdc.h>
+#include <bits/stdc++.h>
 class UsernameProbability
 {
 public:

@@ -35,8 +35,11 @@ private:
 
     std::vector<std::string> deNormalization(std::string str)
     {
-    }
 
+    }
+     void generator(string &s) {
+        
+    }
 public:
     Normalizer() = default;
 
