@@ -142,7 +142,7 @@ public:
     }
 
     int count(const std::string &word)
-    { // kept for old code; use countPrefix/countExact in new code
+    {
         TRIENODE *CURR = root;
         for (char c : word)
         {
