@@ -33,13 +33,54 @@ private:
         }
     }
 
+    void generator(std::string &s, std::string curr, int idx, std::vector<std::string> &res)
+    {
+        if (idx == s.size())
+        {
+            res.push_back(curr);
+            return;
+        }
+
+        char c = s[idx];
+        if (c >= 'a' && c <= 'z')
+        {
+            generator(s, curr + c, idx + 1, res);
+            generator(s, curr + char(c - 'a' + 'A'), idx + 1, res);
+        }
+        else if (c == '.')
+        {
+            for (char r : {'.', '-', '_', '/'})
+            {
+                generator(s, curr + r, idx + 1, res);
+            }
+        }
+        else if (c == '@')
+        {
+            for (char r : {'!', '@', '#', '$'})
+            {
+                generator(s, curr + r, idx + 1, res);
+            }
+        }
+        else if (c == '&')
+        {
+            for (char r : {'%', '^', '&', '*'})
+            {
+                generator(s, curr + r, idx + 1, res);
+            }
+        }
+        else
+        {
+            generator(s, curr + c, idx + 1, res);
+        }
+    }
+
     std::vector<std::string> deNormalization(std::string str)
     {
+        std::vector<std::string> res;
+        generator(str, "", 0, res);
+        return res;
+    }
 
-    }
-     void generator(string &s) {
-        
-    }
 public:
     Normalizer() = default;
 
@@ -48,7 +89,7 @@ public:
         this->initial = initial;
     };
 
-    // return the normalized string 
+    // return the normalized string
     std::string Normalized()
     {
         return Normalization(initial);
